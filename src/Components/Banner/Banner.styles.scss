@@ -1,0 +1,24 @@
+.banner-wrapper{
+    box-shadow: rgba(30,33,35,0.1) 0px 10px 10px -10px;
+    padding:1 rem 0;
+    position:relative;
+    
+
+
+
+    .button{
+        padding: 7px;
+        cursor: pointer;
+        background: rgba(0 ,0, 0, 0.5);
+        color:#fff;
+        border:0;
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        z-index: 2;
+
+        &.nextE1{
+            right:0;
+        }
+    }
+}
