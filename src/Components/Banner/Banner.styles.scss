@@ -2,18 +2,28 @@
     box-shadow: rgba(30,33,35,0.1) 0px 10px 10px -10px;
     padding:1 rem 0;
     position:relative;
+    width :100%;
+ 
+
+   
+    
+
+    img{
+        width: "1200";
+         height: "400"
+    }
     
 
 
 
     .button{
-        padding: 7px;
+        padding: 8px;
         cursor: pointer;
         background: rgba(0 ,0, 0, 0.5);
         color:#fff;
         border:0;
         position:absolute;
-        top:50%;
+        top:30%;
         transform:translateY(-50%);
         z-index: 2;
 

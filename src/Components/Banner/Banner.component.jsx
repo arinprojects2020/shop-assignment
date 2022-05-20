@@ -1,17 +1,22 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from "swiper";
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import HeroCarousel from "react-hero-carousel/dist/HeroCarousel";
 import "./Banner.styles.scss";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const config = {
 	url: "http://localhost:5000/banners",
 	method: "get",
 	headers: { "Content-Type": "application/json" }
 };
-SwiperCore.use([Navigation, Pagination, A11y, Autoplay]);
+SwiperCore.use([Navigation, Pagination, A11y, Autoplay,Scrollbar]);
 
 const Banner = () => {
 	const [banners, setBanners] = useState([]);
@@ -33,6 +38,7 @@ const Banner = () => {
 				slidesPerView={1}
 				pagination={{ clickable: true }}
 				autopla={{ delay: 6000 }}
+				scrollbar={{ draggable: true }}
 				navigation={{ prevE1: ".prevE1", nextE1: ".nextE1" }}
 				loop
 			>
@@ -43,7 +49,7 @@ const Banner = () => {
 								<img
 									src={banner.bannerImageUrl}
 									alt={banner.bannerImageAlt}
-									style={{ width: "1000", height: "200" }}
+									
 								/>
 							</HeroCarousel>
 						</SwiperSlide>

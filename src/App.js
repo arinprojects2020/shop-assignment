@@ -1,19 +1,11 @@
+import Home from "./Routes/Home/home.component.jsx";
 import React from "react";
-import Categories from "./Components/Categories/Categories.component";
-import Banner from "./Components/Banner/Banner.component";
 
 
-
-const App= ()=>{
-return(
-  <>
-  <Banner/>
-  <Categories/>
-  </>
-)
-
-
- 
-};
+const App =()=>{
+  return(
+    <Home/>
+  )
+}
 
 export default App;
