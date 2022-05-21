@@ -2,8 +2,9 @@ import Home from "./Routes/Home/home.component.jsx";
 import React from "react";
 import {Routes , Route} from "react-router-dom";
 import Navigation from "./Routes/Nav/Nav.component.jsx";
-import SignIn from "./Routes/SignIn/signin.component.jsx";
+//import Authentication from "./Routes/authentication/authentication.component.jsx";
 import Register from "./Components/Register/register.component.jsx";
+import SignIn from "./Components/Sign-in/sign-in.component.jsx";
 
 
 
