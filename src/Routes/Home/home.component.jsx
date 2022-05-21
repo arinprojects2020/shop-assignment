@@ -5,14 +5,17 @@ import Footer from "../../Components/Footer/Footer.component";
 
 
 
+
 const Home= ()=>{
 return(
   <>
+  <div className="home-component">
   <Banner/>
   <Categories/>
   <Footer/>
+  </div>
   </>
-)
+);
 
 
  
