@@ -1,9 +1,17 @@
 import React from "react";
 import { Outlet, Link} from "react-router-dom";
 import "./Nav.styles.scss";
+import { useContext } from "react";
+import { UserContext } from "../../context/user.context";
+import {logOutUser} from "../../Utils/Firebase/firebase.utils.js";
 
 
 const Navigation = ()=>{
+    const {currentUser,setCurrentUser} = useContext(UserContext);
+    
+    const signOutHandler = async () => {
+        await logOutUser();
+        setCurrentUser(null);};
     return(
      <>
     <div className="header">
@@ -16,7 +24,16 @@ const Navigation = ()=>{
           <div className="nav-wrapper">
               <div className="nav-top">
                   <div className="top-link">
-                      <Link className="nav-link" to="/signIn">SignIn</Link>
+                  {currentUser ? (
+            <span className='nav-link' onClick={signOutHandler} >
+              {' '}
+              Log Out{' '}
+            </span>
+          ) : (
+            <Link className='nav-link' to='/signIn'>
+              SIGN IN
+            </Link>
+          )}
                     <Link className="nav-link" to="/register">Register</Link>
                     </div>
               </div>
