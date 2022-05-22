@@ -1,19 +1,25 @@
 import React from "react";
 import axios from "axios";
-import { useRoutes,Link } from "react-router-dom";
+import { useSearchParams} from "react-router-dom";
 import { useEffect,useState } from "react";
+import "./ProductSideBar.styles.scss";
 
 
 
-
+const CategoryOption = ({id,name,onClick})=>{
+    return <div onClick ={()=>onClick(id)}>{name}</div>
+};
+const config = {
+    url: "http://localhost:5000/categories",
+    method: "get",
+    headers: { "Content-Type": "application/json" }
+};
 
  const ProductSidebar=()=>{
-     const route = useRoutes();
-     const config = {
-        url: "http://localhost:5000/categories",
-        method: "get",
-        headers: { "Content-Type": "application/json" }
-    };
+    const [searchParams ,setSearchParams]= useSearchParams();
+    const category_id = searchParams.get("category_id");
+
+   
     const [categories,setCategories] =  useState([]);
 
     const fetchSidebarData = async () => {
@@ -24,43 +30,41 @@ import { useEffect,useState } from "react";
 		} catch (err) {
 			console.log("error while fetching data ", err);
 		}
-	}
+	};
+    const onClick = (id)=>{
+        if(id != category_id){
+            searchParams.set("category_id",id);
+
+        }else{
+            searchParams.delete("category_id");
+        }
+        setSearchParams(searchParams);
+    };
     useEffect(() => {
 		fetchSidebarData();
 	},[]);
 
-    const CategoryOption =({id,name})=>{
-        return <option value={id}>{name}</option>;
-    }
+   
 
-    const handleProductPage=(e)=>{
-      route.push(`/products/${e.target.value}`)
-    }
+    const handleProductPage=(e)=>{};
     return(
         <div className="sidebar">
-            <div className="category-select" onChange={handleProductPage} value={route.query.category}>{
+            <div className="category-select" onChange={handleProductPage} >{
                 categories.map((category)=>{
                     return(
                         <CategoryOption key ={category.id}
                         id={category.id}
-                        name={category.name}/>
-                    )
-                })
-            }
+                        name={category.name}
+                            onClick={onClick}
+                        />
+                    );
+                }) }
             
             </div>
-            <div className=""sidebar-list>
-            {categories.map((category)=>{
-                return(
-                    <div className="sidebar-item" key={category.id}>{route.query.category?(<Link to ={`/products/$(category.id)`}>{category.name}</Link>):""}
-                    
-                    </div>
-                  
-                )
-            })}
-                </div>
             </div>
-    )
-}
+                  
+                
+            );
+            };
 
 export default ProductSidebar;

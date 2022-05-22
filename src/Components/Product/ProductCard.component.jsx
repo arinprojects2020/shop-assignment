@@ -1,16 +1,38 @@
 import React from "react";
+import { useContext } from "react";
 import "./ProductCard.styles.scss";
+import { CartContext } from "../../context/cart.context";
+//import axios from "axios";
+const rupeeSign ="&#8377";
 
 
- const ProductCard=({name,price,imageURL,description,id})=>{
+
+
+ const ProductCard=({name,price,imageURL,description})=>{
+    
+    const { addItemToCart } = useContext(CartContext);
+    const addProductToCart = () => addItemToCart(name,price,imageURL,description);
+   // const onAdd = async()=>{
+      //  const config={
+          //  url: "http://localhost:5000/addToCart",
+      //  method: "post",
+       // headers: { "Content-Type": "application/json" },
+       // data:{
+            //productId: id
+       // }
+      //  }
+        //const response = await axios(config);
+        //console.log("response on add", response.data)
+        
+   // };
     return(
-        <div className="product">
+        <div className="product-container">
         <div className="product-title">{name}</div>
         <img className="product-image" src={imageURL} alt={name}></img>
         <div className="product-description">{description}</div>
         <div className="button-row">
-            <span>MRP &#8377</span>
-            <button className="btn" onClick={()=>{}}>Buy Now</button>
+            <span>MRP {price}</span>
+            <button className="btn" onClick={addProductToCart}>Buy Now</button>
         </div>
         </div>
     )

@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useEffect,useState } from "react";
+import { useEffect,useState,useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../Components/Product/ProductCard.component";
 import ProductSidebar from "../../Components/Product/ProductSidebar.component";
 import "./product.styles.scss";
@@ -13,7 +14,16 @@ const config = {
 
 
 const Products=()=>{
+    const[searchParams] = useSearchParams();
+    const category_id = searchParams.get("category_id")
     const [products,setProducts]=useState([]);
+    const filterProducts=useMemo(()=>{
+        if(!category_id){
+            return products;
+        }else{
+            return products.filter((elem)=> elem.category ==  category_id );
+        }
+    },[products,category_id]);
 
     const fetchProductData = async () => {
 		try {
@@ -31,7 +41,7 @@ const Products=()=>{
         <div className="product-main">
             <ProductSidebar/>
             <div className="product-wrapper">
-                {products.map((product)=>{
+                {filterProducts.map((product)=>{
                     return(
                      <ProductCard
                      stock={product.stock}

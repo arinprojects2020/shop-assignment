@@ -7,6 +7,7 @@ import Register from "./Components/Register/register.component.jsx";
 import SignIn from "./Components/Sign-in/sign-in.component.jsx";
 import Products from "./Routes/Products/product.component.jsx";
 import ProductSidebar from "./Components/Product/ProductSidebar.component.jsx";
+import Checkout from "./Routes/checkout/checkout.component.jsx";
 
 
 
@@ -19,7 +20,8 @@ const App =()=>{
      <Route path = "register" element={<Register/>}/>
      <Route path ="products/*"  element={<Products/>}>
        <Route path="products" element ={<ProductSidebar/>}/>
-     </Route>
+        </Route>
+        <Route path='checkout' element={<Checkout />} />
      </Route>
     </Routes>
     
