@@ -1,8 +1,8 @@
 import React from 'react';
 import "./register.styles.scss";
-import { useState,useContext } from 'react';
+import { useState} from 'react';
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from '../../Utils/Firebase/firebase.utils';
-import { UserContext } from '../../context/user.context';
+
 
 
 const defaultFormField={
@@ -18,8 +18,6 @@ const Register =()=>{
     const[formFields,setFormFields] = useState(defaultFormField);
     //destructing intial values
     const{firstName, lastName ,email ,password, confirmPassword} = formFields;
-   
-const {setCurrentUser}=useContext(UserContext);
 
     console.log(formFields);
 
@@ -37,7 +35,6 @@ const {setCurrentUser}=useContext(UserContext);
         }
 
     try{ const {user} = await createAuthUserWithEmailAndPassword(email , password)
-          setCurrentUser(user);
         resetFormFields();
         await createUserDocumentFromAuth (user,{firstName, lastName});
         
