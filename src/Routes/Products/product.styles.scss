@@ -1,0 +1,21 @@
+.product-main{
+    display: flex;
+
+    @media(max-width:760px){
+       flex-direction:column;
+       
+    }
+
+    .product-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+         
+
+        @media(max-width:760px){
+           width: 100%;
+            
+         }
+
+    }
+}

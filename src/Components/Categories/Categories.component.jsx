@@ -4,13 +4,27 @@ import CategoryItem from "../Category/Category.component";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
+const config = {
+	url: "http://localhost:5000/categories",
+	method: "get",
+	headers: { "Content-Type": "application/json" }
+};
+
 const Categories = () => {
 	const [categories, setCategories] = useState([]);
 
-	useEffect(() => {
-		axios.get("http://localhost:5000/categories").then((response) => {
+	const fetchCategoryData = async () => {
+		try {
+			const response = await axios(config);
+			console.log("respnse from category", response.data);
 			setCategories(response.data);
-		});
+		} catch (err) {
+			console.log("error while fetching data ", err);
+		}
+	};
+	useEffect(() => {
+		fetchCategoryData();
 	}, []);
 
 	return (

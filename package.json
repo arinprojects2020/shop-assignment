@@ -12,6 +12,7 @@
     "firebase": "^9.8.1",
     "navigation": "^6.1.0",
     "pagination": "^0.4.6",
+    "query-string": "^7.1.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
