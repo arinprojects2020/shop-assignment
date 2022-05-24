@@ -7,6 +7,7 @@ import {logOutUser} from "../../Utils/Firebase/firebase.utils.js";
 import CartIcon from "../../Components/cart-icon/cart-icon.component";
 import CartDropDown from "../../Components/cart-dropdown/cart-dropdown.component";
 import { CartContext } from "../../context/cart.context";
+import HeroCarousel from "react-hero-carousel/dist/HeroCarousel";
 
 
 
@@ -20,8 +21,11 @@ const Navigation = ()=>{
     <div className="header">
         <div className="nav-container">
         <Link to="/" className="navbar-brand">
-       <img src="/src/Api/shopping-cart-assignment-master/static/images/logo.png" alt ="Sabka Bazar" 
+        <HeroCarousel>
+        <img src={require("../../assets/logo_2x.png")} alt ="Sabka Bazar" 
         className="logo" width="190" height="86"></img>
+        </HeroCarousel>
+       
       
         </Link>
           <div className="nav-wrapper">
@@ -47,7 +51,7 @@ const Navigation = ()=>{
                   
                   <Link className="nav-link" to="/products">Products</Link>
                   </div>
-                  {/*<Cart/>*/}
+                 
               </div>
           </div>
       </div>
