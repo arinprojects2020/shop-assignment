@@ -7,7 +7,7 @@
     "id": "5b6c38156cb7d770b7010ccc"
   },
   {
-    "bannerImageUrl": "/static/images/offers/offer2.jpg",
+    "bannerImageUrl": "/assets/static/images/offers/offer2.jpg",
     "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
     "isActive": true,
     "order": 2,
