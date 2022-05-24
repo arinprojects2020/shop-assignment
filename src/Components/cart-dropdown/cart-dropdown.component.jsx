@@ -25,7 +25,7 @@ const CartDropDown = () => {
      
            <div>
            <span>
-           <img src="../../assets/lowest-price.png" alt="Lowest Price"></img>
+           <img src={require("../../assets/lowest-price.png")} alt="Lowest Price"></img>
            You wouldn't find it cheaper anywhere
            </span>
                

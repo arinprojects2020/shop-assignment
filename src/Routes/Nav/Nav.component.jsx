@@ -20,7 +20,7 @@ const Navigation = ()=>{
     <div className="header">
         <div className="nav-container">
         <Link to="/" className="navbar-brand">
-       <img src="/src/Api/shopping-cart-assignment-master/static/images/logo.png" alt ="Sabka Bazar" 
+       <img src={require("../../assets/logo_2x.png")} alt ="Sabka Bazar" 
         className="logo" width="190" height="86"></img>
       
         </Link>
