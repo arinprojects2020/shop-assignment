@@ -4,8 +4,9 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between space-evenly;
     cursor: pointer;
+    background-color: rgb(74, 75, 75);
   
     .shop-icon {
       width: 24px;
