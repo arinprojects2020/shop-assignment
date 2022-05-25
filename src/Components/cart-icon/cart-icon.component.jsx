@@ -10,8 +10,12 @@ const CartIcon=()=>{
   const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
 return (
     <div className="container" onClick={toggleIsCartOpen}>
-        <img src={require("../../assets/cart.svg")} alt ="shop-icon" className="shop-icon"/>
-        <span className="count">{cartItemCount}</span>
+    <span>
+    <img src={require("../../assets/cart.svg").default} alt ="shop-icon" className="shop-icon"/>
+    <br/>
+        <div className="count">{cartItemCount}</div>
+    </span>
+        
     </div>
 )
 }

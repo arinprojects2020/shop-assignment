@@ -43,7 +43,7 @@ const Banner = () => {
 				loop
 			>
 				{banners.map((banner) => {
-					console.log(`../../assets${banner.bannerImageUrl}`)
+					
 					return (
 						<SwiperSlide key={banner.id}>
 							<HeroCarousel>
