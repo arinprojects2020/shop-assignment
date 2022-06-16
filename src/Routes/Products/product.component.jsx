@@ -1,22 +1,26 @@
 import axios from "axios";
-import { useEffect,useState,useMemo } from "react";
+import { useState,useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductCard from "../../Components/Product/ProductCard.component";
 import ProductSidebar from "../../Components/Product/ProductSidebar.component";
 import "./product.styles.scss";
+import { useContext } from "react";
+import { ProductContext } from "../../context/product.context";
 
 
-const config = {
-	url: "http://localhost:5000/products",
-	method: "get",
-	headers: { "Content-Type": "application/json" }
-};
+//const config = {
+	//url: "http://localhost:5000/products",
+	//method: "get",
+	//headers: { "Content-Type": "application/json" }
+//};
 
 
 const Products=()=>{
+    
     const[searchParams] = useSearchParams();
     const category_id = searchParams.get("category_id")
-    const [products,setProducts]=useState([]);
+    //const [products,setProducts]=useState([]);
+    const {products}=useContext(ProductContext)
     const filterProducts=useMemo(()=>{
         if(!category_id){
             return products;
@@ -25,7 +29,7 @@ const Products=()=>{
         }
     },[products,category_id]);
 
-    const fetchProductData = async () => {
+    {/*const fetchProductData = async () => {
 		try {
 			const response = await axios(config);
 			console.log("respnse from product", response.data);
@@ -36,7 +40,7 @@ const Products=()=>{
 	};
 	useEffect(() => {
 		fetchProductData();
-	}, []);
+	}, []);*/}
     return(
         <div className="product-main">
             <ProductSidebar/>
