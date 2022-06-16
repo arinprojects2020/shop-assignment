@@ -27,13 +27,18 @@ const rupeeSign ="&#8377";
    // };
     return(
         <div className="product-container">
+        <header>
         <div className="product-title">{name}</div>
+        </header>
+        <div className="image-container">
         <img className="product-image" src={imageURL} alt={name}></img>
         <div className="product-description">{description}</div>
-        <div className="button-row">
-            <span>MRP {price}</span>
-            <button className="btn" onClick={addProductToCart}>Buy Now</button>
         </div>
+        <br></br>
+        <footer className="button-row">
+        <span>MRP {price} </span>
+           <button className="btn" onClick={addProductToCart}>Buy Now</button>
+        </footer> 
         </div>
     )
 }

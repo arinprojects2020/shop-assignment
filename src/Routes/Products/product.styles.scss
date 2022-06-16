@@ -7,9 +7,12 @@
     }
 
     .product-wrapper{
-        display: flex;
-        flex-wrap: wrap;
-        width: 80%;
+        width:100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        row-gap: 2px;
+        
          
 
         @media(max-width:760px){
