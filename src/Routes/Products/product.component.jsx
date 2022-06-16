@@ -47,7 +47,7 @@ const Products=()=>{
             <div className="product-wrapper">
                 {filterProducts.map((product)=>{
                     return(
-                     <ProductCard
+                     <ProductCard 
                      stock={product.stock}
                      key={product.sku}
                      name={product.name}

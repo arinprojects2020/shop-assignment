@@ -39,8 +39,6 @@ const rupeeSign ="&#8377";
         <span>MRP {price} </span>
            <button className="btn" onClick={addProductToCart}>Buy Now</button>
         </footer> 
-        
-       
         </div>
     )
 }
