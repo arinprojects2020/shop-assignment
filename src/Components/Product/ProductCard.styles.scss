@@ -4,8 +4,9 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    width: 30%;
-    padding: 20%;
+    width: 70%;
+    padding:20%;
+    height: auto;
     box-shadow: rgba(0,0,0,0.1)0px 4px 6px -1px,
     rgba(0,0,0,0.06)0px 2px 4px -1px;
     margin: 1.5%;
@@ -25,21 +26,36 @@
         margin: auto;
     }
     .product-description{
-        background: grey;
+        background: rgb(249, 247, 247);
         color:black;
         border:none;
-        padding: 10px 20px;
-        font-size: 15px;
+        width: 100%;
+        padding: 10px;
+        font-size: 13px;
         cursor: pointer;
+
+        text-align: justify;
+        -ms-text-justify: distribute-all-lines;
+        text-justify: distribute-all-lines;
     }
     .button-row{
         display: flex;
-        flex-wrap: wrap;
-        width: 80%;
+        flex-direction: row;
+        justify-content: space-between;
+        width:95%;
+
+        .btn{
+           background-color: red;
+           color: white;
+           padding: 10px 10px;
+           font-size: small;
+           border: none;
+           
+        }
 
 
         @media(max-width:760px){
-            width: 100%;
+            width: 80%;
            
         }
     }

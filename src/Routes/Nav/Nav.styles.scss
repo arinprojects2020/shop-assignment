@@ -1,10 +1,16 @@
 .header{
     box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+    width: auto;
+    //position:absolute;
+   
+    
 
     .nav-container{
         display: flex;
         max-width: (--maxWidth);
         margin: 0 auto;
+        //position: fixed;
+      
 
 
         .navbar-brand{

@@ -43,7 +43,7 @@ const Products=()=>{
 	}, []);*/}
     return(
         <div className="product-main">
-            <ProductSidebar/>
+         <ProductSidebar/>   
             <div className="product-wrapper">
                 {filterProducts.map((product)=>{
                     return(
