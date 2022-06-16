@@ -34,7 +34,7 @@ const rupeeSign ="&#8377";
         <img className="product-image" src={imageURL} alt={name}></img>
         <div className="product-description">{description}</div>
         </div>
-        
+        <br></br>
         <footer className="button-row">
         <span>MRP {price} </span>
            <button className="btn" onClick={addProductToCart}>Buy Now</button>
