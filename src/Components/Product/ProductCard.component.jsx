@@ -8,25 +8,13 @@ const rupeeSign ="&#8377";
 
 
 
- const ProductCard=({name,price,imageURL,description})=>{
-    //const {name,price,imageURL,description} = product;
+const ProductCard = ({  name, price, imageURL ,description,id }) => {
+
     const { addItemToCart } = useContext(CartContext);
-    const addProductToCart = () => addItemToCart(name,price);
-    //const onAdd = async()=>{
-        //const config={
-            // url: "http://localhost:5000/addToCart",
-        // method: "post",
-        //headers: { "Content-Type": "application/json" },
-        // data:{
-             //productId: id
-       //  }
-       // }
-         //const response = await axios(config);
-        // console.log("response on add", response.data)
-         
-    // };
-    
-    return(
+  
+    const addProductToCart = () => addItemToCart( name, price,imageURL);
+  
+    return (
         <div className="product-container">
         <header>
         <div className="product-title">{name}</div>
@@ -41,7 +29,10 @@ const rupeeSign ="&#8377";
            <button className="btn" onClick={addProductToCart}>Buy Now</button>
         </footer> 
         </div>
-    )
-}
+    );
+  };
 
 export default ProductCard;
+
+
+
