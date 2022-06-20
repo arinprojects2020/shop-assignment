@@ -13,7 +13,7 @@ import HeroCarousel from "react-hero-carousel/dist/HeroCarousel";
 
 const Navigation = ()=>{
     const {currentUser} = useContext(UserContext);
-    const{isCartOpen} = useContext(CartContext)
+   const {isCartOpen} = useContext(CartContext)
     
     
     return(
@@ -41,10 +41,14 @@ const Navigation = ()=>{
               SIGN IN
             </Link>
           )}
-          <CartIcon/>
-                    <Link className="nav-link" to="/register">Register</Link>
-                    </div>
-              </div>
+          <span>
+          <Link className="nav-link" to="/register">Register</Link>          
+          </span>
+          <span> <CartIcon/></span>
+          </div>
+          {isCartOpen && <CartDropDown/>}
+         </div>
+    
               <div className="nav-bottom">
                   <div className="bottom-link">
                   <Link className="nav-link" to="/">Home</Link>
@@ -55,7 +59,7 @@ const Navigation = ()=>{
               </div>
           </div>
       </div>
-      {isCartOpen && <CartDropDown/>}
+      
     </div>
         
          <Outlet/>

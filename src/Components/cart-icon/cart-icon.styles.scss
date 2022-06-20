@@ -1,22 +1,29 @@
 .container {
-    width: 45px;
-    height: 45px;
+   height: 45px;
     position: relative;
     display: flex;
     align-items:center;
     justify-content: space-between;
     cursor: pointer;
+    background-color: beige;
+    width: 60%;
+    
+    
   
     .shop-icon {
       width: 24px;
       height: 24px;
+      padding-left: 8px;
+      color: rgb(26, 10, 248);
     }
   
     .count {
-      position: absolute;
-      font-size: 10px;
-      font-weight: bold;
-      bottom: 12px;
+      //position: absolute;
+      font-size: 15px;
+      font-weight:lighter;
+      bottom: 22px;
+      width :20%;
+      padding-right: 40px;
     }
   }
   
