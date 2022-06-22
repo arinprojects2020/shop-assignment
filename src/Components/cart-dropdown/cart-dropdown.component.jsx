@@ -26,13 +26,13 @@ const CartDropDown = () => {
           ))}
        </div>
        <div className="lowest">
-       <span>
+      {/*<span>
            <img src={require("../../assets/lowest-price.png")} alt="Lowest Price"></img>
            You wouldn't find it cheaper anywhere
-           </span>
+           </span>*/}
         </div>
          <footer>
-       <p>Promo code can be applied on payment page</p>
+       {/*<p>Promo code can be applied on payment page</p>*/}
        <button>Go to CheckOut Page</button>
       </footer>
       </body>
