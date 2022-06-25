@@ -15,27 +15,25 @@ const CartDropDown = () => {
     return(
         <div className="cart-dropdown-container">
         
-        <div className="header">
+        {/*<div className="header">
           <h3>My Cart(0 item)</h3>
-        </div>
-        
-        
-        <body>
-        <div className="cart-items"> {cartItems.map((item) => (
-            <CartItem key={item.id} cartItem={item} />
-          ))}
-       </div>
-       <div className="lowest">
+        </div>*/}
+        <div className="cart-items"> 
+        {cartItems.length ? (
+          cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} cartItem={cartItem} />
+          ))
+        ) : (
+          <span className='empty-message'>Your cart is empty</span>
+        )}   </div>
+        {/* <div className="lowest">
       {/*<span>
            <img src={require("../../assets/lowest-price.png")} alt="Lowest Price"></img>
            You wouldn't find it cheaper anywhere
-           </span>*/}
-        </div>
-         <footer>
-       {/*<p>Promo code can be applied on payment page</p>*/}
-       <button>Go to CheckOut Page</button>
-      </footer>
-      </body>
+           </span>
+        </div> <p>Promo code can be applied on payment page</p>*/}
+       <button onClick={()=>{}}>Go to CheckOut Page</button>
+    
     </div>
     )
 }

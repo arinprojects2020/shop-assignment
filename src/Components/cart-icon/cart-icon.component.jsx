@@ -11,7 +11,7 @@ const CartIcon=()=>{
 return (
     <div className="container" onClick={toggleIsCartOpen}>
   <img src={require("../../assets/cart.svg").default} alt ="shop-icon" className="shop-icon"/>
-    <span className="count">{/*{cartItemCount}*/}0Items</span>
+    <span className="count">{cartItemCount}Items</span>
    
      </div>
 )
