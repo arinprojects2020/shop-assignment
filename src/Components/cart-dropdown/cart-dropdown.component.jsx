@@ -1,17 +1,17 @@
 import "./cart-dropdown.styles.scss";
 import CartItem from "../cart-item/cart-item.component";
 import { useContext } from 'react';
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { CartContext } from "../../context/cart.context";
 
 
 const CartDropDown = () => {
     const { cartItems } = useContext(CartContext);
-   // const navigate = useNavigate();
-   // const goToCheckoutHandler = () => {
-      //navigate('/checkout');
-    //};
+    const navigate = useNavigate();
+    const goToCheckoutHandler = () => {
+      navigate('/checkout');
+    };
     return(
         <div className="cart-dropdown-container">
         
@@ -32,7 +32,7 @@ const CartDropDown = () => {
            You wouldn't find it cheaper anywhere
            </span>
         </div> <p>Promo code can be applied on payment page</p>*/}
-       <button onClick={()=>{}}>Go to CheckOut Page</button>
+       <button onClick={ goToCheckoutHandler}>Go to CheckOut Page</button>
     
     </div>
     )

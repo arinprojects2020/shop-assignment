@@ -21,6 +21,17 @@
     .price {
       width: 23%;
     }
+
+    .box{
+      display: flex;
+      flex-direction: row;
+      font-weight:bold;
+      width: 60px;
+      border-left: 10px;
+      border-right: 10px;
+      background-color: rgb(186, 234, 243);
+
+    }
   
     .quantity {
       display: flex;
