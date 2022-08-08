@@ -9,7 +9,7 @@ import {getAuth,
   signOut,onAuthStateChanged} 
     from "firebase/auth";
    
-import {getFirestore,doc,setDoc, getDoc}from "firebase/firestore";
+import {getFirestore,doc,setDoc, getDoc,collection,writeBatch}from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -38,6 +38,25 @@ googleProvider.setCustomParameters({
 
 //Instantiate firestore to get access of the database
   export const db = getFirestore();
+  export const addCollectionAndDocuments = async (
+    collectionKey,
+    objectsToAdd
+  ) => {
+    const batch = writeBatch(db);
+    const collectionRef = collection(db, collectionKey);
+    
+    objectsToAdd.forEach((object) => {
+       const docRef = doc(collectionRef, object.sku);
+       batch.set(docRef, object);
+      
+    });
+   
+  
+    await batch.commit();
+    console.log('done');
+  };
+
+
 
   export const createUserDocumentFromAuth = async(userAuth, additionalInformation = {})=> {
     if (!userAuth) return;
